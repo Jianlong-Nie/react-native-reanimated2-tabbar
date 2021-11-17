@@ -1,6 +1,8 @@
 # react-native-reanimated2-tabbar
 最终效果
+
 ![Nov-17-2021 13-47-52.gif](https://upload-images.jianshu.io/upload_images/9126595-401d988db9f7b8b3.gif?imageMogr2/auto-orient/strip)
+
 
 这里记录下所有实现过程以及踩过的坑：
 ##### 创建项目(这里用的是expo，react-native一样的)
@@ -17,7 +19,10 @@ expo install react-native-reanimated
 expo install react-native-svg
 ```
 ##### 添加需要的svg icon
+
 ![Nov-17-2021 14-19-05.gif](https://upload-images.jianshu.io/upload_images/9126595-8f6af281180be5d2.gif?imageMogr2/auto-orient/strip)
+
+
 在figma或者sketch等设计软件里面复制图标的svg代码，然后用[svg转svg组件工具](https://react-svgr.com/playground/)生成react-native组件：
 ![image.png](https://upload-images.jianshu.io/upload_images/9126595-436a381e3acd1986.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意左侧选择react-native以及TypeScript，比如我这边最终生成的HomeIcon的代码如下：
@@ -242,7 +247,10 @@ export default TabItem;
 ```
 到目前为止，我们已经实现了自定义tabbar，[代码](https://github.com/zhuchuanwu/react-native-customtabbar)
 效果如下：
+
 ![Nov-17-2021 15-18-26.gif](https://upload-images.jianshu.io/upload_images/9126595-7289c8c2aa7913d3.gif?imageMogr2/auto-orient/strip)
+
+
 下面是我们的重点：实现动画效果
 #### 实现颜色从一个item转移到另一个item的效果
 ###### 整体思路：在icon上面做文章，底下一层未选中的icon，上面悬浮一层选中的icon，选中的icon通过动画来控制其width，从而实现颜色渐变的效果，我们来试下：
