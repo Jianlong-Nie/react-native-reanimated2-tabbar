@@ -9,6 +9,7 @@ import FinanceIcon from "./icons/FinanceIcon";
 import MoreIcon from "./icons/MoreIcon";
 import TabItem from "./TabItem";
 import { Colors } from "./icons/Constants";
+import Particules from "./Particules";
 export const bottomHeight = 70;
 
 function BottomCustomTab({
@@ -54,19 +55,19 @@ function BottomCustomTab({
           let Icon = <HomeIcon />;
           switch (route.name) {
             case "Home":
-              Icon = <HomeIcon active={isFocused} />;
+              Icon = <HomeIcon />;
               break;
             case "Calendar":
-              Icon = <CategoryIcon active={isFocused} />;
+              Icon = <CategoryIcon />;
               break;
             case "FindCourse":
-              Icon = <SearchIcon active={isFocused} />;
+              Icon = <SearchIcon />;
               break;
             case "Finance":
-              Icon = <FinanceIcon active={isFocused} />;
+              Icon = <FinanceIcon />;
               break;
             case "UserCenter":
-              Icon = <MoreIcon active={isFocused} />;
+              Icon = <MoreIcon />;
               break;
             default:
               break;
@@ -84,6 +85,7 @@ function BottomCustomTab({
             </TabItem>
           );
         })}
+        <Particules active={active} preActive={preActive} />
       </View>
     </React.Fragment>
   );

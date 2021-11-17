@@ -9,7 +9,7 @@ function CategoryIcon({ active = false }: IconProps) {
     <Svg width={ICON_SIZE} height={ICON_SIZE} fill="none">
       <G
         strokeWidth={2}
-        fill={active ? Colors.primary : Colors.border}
+        fill={active ? Colors.primary : "white"}
         stroke={active ? Colors.primary : Colors.border}
         fillRule="evenodd"
         strokeLinecap="round"

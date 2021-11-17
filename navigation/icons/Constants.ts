@@ -13,6 +13,6 @@ export const PADDING = 16;
 export const SEGMENT = PixelRatio.roundToNearestPixel(width / numberOfIcons);
 export const ICON_SIZE = 24;
 export const Colors = {
-  primary: "#0AC66F",
+  primary: "#F36B7F",
   border: "#616164",
 };
