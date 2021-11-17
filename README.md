@@ -1,21 +1,22 @@
 # react-native-reanimated2-tabbar
 最终效果
 ![Nov-17-2021 13-47-52.gif](https://upload-images.jianshu.io/upload_images/9126595-401d988db9f7b8b3.gif?imageMogr2/auto-orient/strip)
+
 这里记录下所有实现过程以及踩过的坑：
-#####创建项目(这里用的是expo，react-native一样的)
+##### 创建项目(这里用的是expo，react-native一样的)
 ```
 expo init react-native-reanimated2demo
 ```
 这里我选择的磨板是```Choose a template: › tabs (TypeScript)```
-#####添加react-native-reanimated2
+##### 添加react-native-reanimated2
 ```
 expo install react-native-reanimated
 ```
-####安装react-native-svg
+#### 安装react-native-svg
 ```
 expo install react-native-svg
 ```
-#####添加需要的svg icon
+##### 添加需要的svg icon
 ![Nov-17-2021 14-19-05.gif](https://upload-images.jianshu.io/upload_images/9126595-8f6af281180be5d2.gif?imageMogr2/auto-orient/strip)
 在figma或者sketch等设计软件里面复制图标的svg代码，然后用[svg转svg组件工具](https://react-svgr.com/playground/)生成react-native组件：
 ![image.png](https://upload-images.jianshu.io/upload_images/9126595-436a381e3acd1986.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -89,11 +90,11 @@ export const Colors = {
   border: "#616164",
 };
 ```
-####安装react-native-tailwindcss（非必须）
+#### 安装react-native-tailwindcss（非必须）
 ```
 yarn add react-native-tailwindcs
 ```
-####实现自定义的tabbar以及tabbarItem
+#### 实现自定义的tabbar以及tabbarItem
 ```
 import React, { useState } from "react";
 import { View } from "react-native";
@@ -243,8 +244,8 @@ export default TabItem;
 效果如下：
 ![Nov-17-2021 15-18-26.gif](https://upload-images.jianshu.io/upload_images/9126595-7289c8c2aa7913d3.gif?imageMogr2/auto-orient/strip)
 下面是我们的重点：实现动画效果
-####实现颜色从一个item转移到另一个item的效果
-######整体思路：在icon上面做文章，底下一层未选中的icon，上面悬浮一层选中的icon，选中的icon通过动画来控制其width，从而实现颜色渐变的效果，我们来试下：
+#### 实现颜色从一个item转移到另一个item的效果
+###### 整体思路：在icon上面做文章，底下一层未选中的icon，上面悬浮一层选中的icon，选中的icon通过动画来控制其width，从而实现颜色渐变的效果，我们来试下：
 修改TabItem，在icon下面添加选中的icon：
 ```
  <View style={[StyleSheet.absoluteFill]}>{children}</View>
@@ -536,7 +537,7 @@ export default ({ active, preActive }: PariculesProps) => {
   );
 };
 ```
-####添加波浪效果
+#### 添加波浪效果
 ```
 import React from "react";
 import { StyleSheet, View } from "react-native";
