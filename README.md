@@ -24,8 +24,11 @@ expo install react-native-svg
 
 
 在figma或者sketch等设计软件里面复制图标的svg代码，然后用[svg转svg组件工具](https://react-svgr.com/playground/)生成react-native组件：
+
 ![image.png](https://upload-images.jianshu.io/upload_images/9126595-436a381e3acd1986.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意左侧选择react-native以及TypeScript，比如我这边最终生成的HomeIcon的代码如下：
+
+
 ```
 import * as React from "react";
 import Animated from "react-native-reanimated";
@@ -260,10 +263,18 @@ export default TabItem;
   {cloneElement(children, { active: true })}
 ```
 目前的效果：
+
+
 ![image.png](https://upload-images.jianshu.io/upload_images/9126595-ef23ed43faef8f66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 因为选中icon全部遮盖住了下面的icon：
 修改tabbar
+
+
 ![image.png](https://upload-images.jianshu.io/upload_images/9126595-0c92221a1da45495.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 去掉所有icon的动态选中效果，
 添加动画style：
 ```
